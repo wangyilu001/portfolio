@@ -1,0 +1,68 @@
+/* A three-card entrance, with the lifted paper treatment from the reference. */
+.experience-heading{padding-top:60px;padding-bottom:38px}
+.experience-heading h2{font-size:clamp(70px,12vw,170px);margin-top:20px;margin-bottom:22px}
+.experience-intro p{font-size:24px;line-height:1.6}
+.experience-card-area{padding-bottom:65px;position:relative;z-index:1}
+.experience-card-topline{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:25px;color:#f9fcf4a6;font-size:12px}
+.experience-card-topline button{display:flex;align-items:center;gap:12px;background:none;border:0;padding:10px 0 10px 20px;font:inherit;color:var(--paper)}
+.experience-card-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;position:relative;isolation:isolate;align-items:start}
+.internship-card{display:block;position:relative;padding:18px 18px 22px;background:#3e486d;color:var(--paper);border:1px solid #717b9b70;border-radius:24px;transform-origin:50% 60%;transition:transform .35s cubic-bezier(.2,.8,.2,1),background .25s,color .25s,box-shadow .35s;min-width:0}
+.internship-card:hover,.internship-card:focus-visible{z-index:3;background:var(--paper);color:var(--navy);transform:translateY(-15px) rotate(-6deg) scale(1.075);box-shadow:0 22px 42px #10172c3b;border-color:var(--paper)}
+.internship-card:nth-child(3):hover,.internship-card:nth-child(3):focus-visible{transform:translateY(-15px) rotate(5deg) scale(1.075)}
+.internship-cover{position:relative;display:flex;align-items:center;justify-content:center;aspect-ratio:1.6;border-radius:13px;overflow:hidden;padding:28px 15px 8px}
+.internship-cover--byte{background:var(--pink)}
+.internship-cover--kwai{background:var(--orange)}
+.internship-cover--cicc{background:var(--lavender)}
+.internship-cover .exp-illustration{height:100%;width:90%;max-height:200px;max-width:none;margin:0;transform:rotate(-5deg);transition:transform .35s}
+.internship-cover--kwai .exp-illustration{transform:rotate(5deg)}
+.internship-card:hover .exp-illustration,.internship-card:focus-visible .exp-illustration{transform:rotate(2deg) scale(1.04)}
+.internship-cover-tag{position:absolute;z-index:1;top:14px;left:15px;font-size:10px;color:var(--navy);font-weight:650;letter-spacing:.1px}
+.internship-cover-open{position:absolute;right:12px;bottom:12px;display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--navy);color:var(--paper);font-size:19px;line-height:1}
+.internship-card h3{font-size:25px;font-weight:750;letter-spacing:-.9px;line-height:1.3;margin:25px 0 10px}
+.internship-card-role{font-size:12px;line-height:1.8;color:inherit;opacity:.86;min-height:22px}
+.internship-card-meta{display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:10px;line-height:1.8;margin-top:17px;opacity:.64}
+.experience-card-bottom{margin-top:32px;font-size:10px;line-height:1.8;color:#f9fcf469}
+
+/* Detail pages retain the work, dates and contribution boundaries from the resume. */
+.experience-detail-page{--detail-surface:var(--pink)}
+.experience-detail-page[data-company="kwai"]{--detail-surface:var(--orange)}
+.experience-detail-page[data-company="cicc"]{--detail-surface:var(--lavender)}
+.detail-toolbar{display:flex;align-items:center;justify-content:space-between;gap:22px;padding-top:12px;padding-bottom:35px}
+.detail-back{font-size:13px;display:inline-flex;align-items:center;gap:13px;padding-block:10px}
+.detail-back>span{font-size:23px}
+.detail-company-links{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+.detail-company-links a{font-size:11px;border:1px solid #f9fcf43d;padding:9px 15px;border-radius:50px;transition:background .2s,color .2s}
+.detail-company-links a:hover,.detail-company-links a[aria-current]{background:var(--pink);color:var(--navy);border-color:var(--pink)}
+.detail-article-wrap{padding-inline:2.2%}
+.experience-detail-page .exp-entry{background:var(--detail-surface);border-radius:40px;max-width:1500px;margin-inline:auto}
+.experience-detail-page .exp-entry-inner{max-width:1440px;padding-top:58px;padding-bottom:68px}
+.experience-detail-page .exp-company-heading{align-items:baseline}
+.experience-detail-page .exp-company-heading h1{font-size:clamp(50px,7vw,100px);font-weight:800;line-height:1.2;letter-spacing:-.06em;margin:0}
+.experience-detail-page .exp-company-heading h1 span{font-family:Arial,sans-serif;font-size:14px;letter-spacing:0;font-weight:550;margin-left:15px;vertical-align:middle}
+.experience-detail-page .exp-entry-content{align-items:start;grid-template-columns:.8fr 1.2fr;gap:8%;padding-top:45px}
+.experience-detail-page .exp-poster{position:sticky;top:30px}
+.experience-detail-page .exp-illustration{height:235px;max-width:350px;width:100%;margin-bottom:12px}
+.experience-detail-page .exp-result{max-width:350px;gap:20px}
+.experience-detail-page .exp-result strong{font-size:62px;letter-spacing:-3.5px}
+.experience-detail-page .exp-result strong span{font-size:26px}
+.experience-detail-page .exp-description h2{font-size:clamp(30px,3vw,44px);font-weight:700;line-height:1.4;letter-spacing:-1.5px;margin:0 0 22px}
+.experience-detail-page .exp-summary{max-width:560px;font-size:14px}
+.detail-task-list{margin-top:35px;border-top:1px solid #1d244031}
+.detail-task{padding-top:24px;border-bottom:1px solid #1d244031}
+.detail-task>h3{font-size:18px;line-height:1.6;font-weight:700;letter-spacing:-.5px;margin:0 0 17px}
+.detail-task .exp-task-content{font-size:13px;line-height:2;padding-bottom:26px;padding-right:0}
+.detail-source{font-size:10px;line-height:1.9;margin-top:26px;color:#1d244080}
+.detail-pagination{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:30px;margin-bottom:42px}
+.detail-pagination a{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:23px 0;border-top:1px solid #f9fcf433;font-size:18px;font-weight:600;letter-spacing:-.5px}
+.detail-pagination a:last-child{text-align:right}
+.detail-pagination a>span{font-size:27px;font-weight:400;transition:transform .2s}
+.detail-pagination a:first-child:hover>span{transform:translateX(-5px)}
+.detail-pagination a:last-child:hover>span{transform:translateX(5px)}
+.detail-pagination small{display:block;font-size:10px;line-height:1.8;color:#f9fcf47d;font-weight:400;letter-spacing:0;margin-bottom:6px}
+.detail-footer{display:flex;justify-content:space-between;gap:20px;align-items:center;border-top:1px solid #f9fcf41f;padding-block:24px;margin-top:0;font-size:11px;color:#f9fcf48c}
+.detail-footer a:hover{color:var(--pink)}
+
+@media(max-width:1050px){.experience-heading h2{font-size:12vw}.experience-intro p{font-size:22px}.experience-card-grid{gap:17px}.internship-card{padding:13px 13px 19px;border-radius:20px}.internship-card h3{font-size:23px;margin-top:20px}.internship-card-role{font-size:11px}.internship-card-meta{font-size:9px}.internship-cover{padding-top:25px;aspect-ratio:1.45}.internship-cover-tag{font-size:9px;top:12px;left:12px}.experience-detail-page .exp-company-heading h1 span{font-size:12px}.experience-detail-page .exp-entry-inner{padding-inline:6%}.experience-detail-page .exp-entry-content{gap:6%}.experience-detail-page .exp-result{display:block}.experience-detail-page .exp-result p{border:0;padding:14px 0 0}.detail-task .exp-task-content{font-size:12px}}
+@media(max-width:760px){.experience-heading{padding-top:50px;padding-bottom:27px}.experience-heading h2{font-size:15.6vw;margin-top:20px;margin-bottom:19px}.experience-intro p{font-size:19px}.experience-card-topline{font-size:10px;margin-bottom:16px}.experience-card-grid{grid-template-columns:1fr;gap:22px;max-width:500px;margin-inline:auto}.internship-card{padding:17px 17px 22px;border-radius:24px}.internship-cover{aspect-ratio:1.65;padding:30px 15px 8px}.internship-cover .exp-illustration{height:100%;width:90%;max-height:220px}.internship-cover-tag{top:14px;left:15px;font-size:10px}.internship-card h3{font-size:26px;margin-top:22px}.internship-card-role{font-size:12px}.internship-card-meta{font-size:10px;margin-top:15px}.internship-card:hover,.internship-card:focus-visible,.internship-card:nth-child(3):hover,.internship-card:nth-child(3):focus-visible{transform:none;box-shadow:none}.experience-card-area{padding-bottom:40px}.experience-card-bottom{font-size:9px;margin-top:23px}.detail-toolbar{align-items:start;flex-direction:column;gap:12px;padding-top:6px;padding-bottom:25px}.detail-back{font-size:12px;padding-block:5px}.detail-company-links{gap:7px}.detail-company-links a{font-size:10px;padding:8px 12px}.detail-article-wrap{padding-inline:3%}.experience-detail-page .exp-entry{border-radius:26px}.experience-detail-page .exp-entry-inner{padding:30px 7% 37px}.experience-detail-page .exp-company-heading{align-items:start;gap:10px;padding-bottom:22px}.experience-detail-page .exp-company-heading h1{font-size:41px;letter-spacing:-2.8px}.experience-detail-page .exp-company-heading h1 span{display:block;font-size:11px;margin:10px 0 0;letter-spacing:0}.experience-detail-page .exp-date{font-size:9px;line-height:1.6;gap:4px;max-width:105px}.experience-detail-page .exp-date span{font-size:9px}.experience-detail-page .exp-entry-content{grid-template-columns:1fr;gap:33px;padding-top:27px}.experience-detail-page .exp-poster{position:relative;top:auto;display:grid;grid-template-columns:1.1fr 1fr;gap:12px}.experience-detail-page .exp-illustration{height:150px;width:100%;margin:0}.experience-detail-page .exp-result{display:block;padding:0}.experience-detail-page .exp-result strong{font-size:45px;letter-spacing:-2.5px}.experience-detail-page .exp-result strong span{font-size:22px}.experience-detail-page .exp-result p{font-size:10px;padding-top:11px}.experience-detail-page .exp-description h2{font-size:29px;letter-spacing:-1.1px;margin-bottom:17px}.experience-detail-page .exp-summary{font-size:12px}.detail-task-list{margin-top:27px}.detail-task{padding-top:20px}.detail-task>h3{font-size:16px;margin-bottom:14px}.detail-task .exp-task-content{font-size:12px;line-height:1.95;padding-bottom:22px}.detail-source{font-size:9px}.detail-pagination{gap:20px;margin-top:20px;margin-bottom:20px}.detail-pagination a{font-size:15px;padding-top:19px;gap:12px}.detail-pagination a>span{font-size:21px}.detail-pagination small{font-size:9px}.detail-footer{font-size:9px;padding-block:20px;gap:12px;flex-wrap:wrap}.detail-footer>a:last-child{margin-left:auto}}
+@media(max-width:380px){.experience-detail-page .exp-company-heading h1{font-size:35px;letter-spacing:-2px}.experience-detail-page .exp-date{font-size:8px}.experience-detail-page .exp-result strong{font-size:41px}.internship-card h3{font-size:24px}}
+@media(prefers-reduced-motion:reduce){.internship-card,.internship-card:hover,.internship-card:focus-visible,.internship-card:nth-child(3):hover,.internship-card:nth-child(3):focus-visible{transform:none!important;transition:none!important}.internship-cover .exp-illustration{transition:none!important}}

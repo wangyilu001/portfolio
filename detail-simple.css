@@ -1,0 +1,13 @@
+/* Content-sized cards avoid empty full-height panels on tall screens. */
+body.experience-detail-page{padding:84px clamp(16px,3vw,48px) 32px;overflow-y:auto;height:auto;min-height:100dvh}
+.detail-simple{box-sizing:border-box;width:100%;max-width:1440px;margin-inline:auto;display:grid;grid-template-columns:minmax(220px,.8fr) minmax(0,1.5fr);align-items:center;gap:clamp(24px,4vw,64px);padding:clamp(24px,4vw,56px);background:#fff6e8;border-radius:28px;box-shadow:8px 8px 0 #f24d94;color:#4b2937}
+.detail-simple figure{margin:0;min-width:0;display:flex;justify-content:center}
+.detail-simple img{display:block;width:100%;height:auto;max-height:760px;object-fit:contain;border-radius:16px}
+.detail-resume{min-width:0;overflow-wrap:anywhere}
+.detail-resume h1{font-size:clamp(28px,3.2vw,48px);line-height:1.2;margin:0 0 12px}
+.detail-role{font-size:clamp(15px,1.5vw,21px);line-height:1.6;margin:0 0 24px;color:#795465}
+.detail-resume ul{padding:0;margin:0;list-style:none;display:grid;gap:clamp(18px,2.4vw,32px)}
+.detail-resume li{font-size:clamp(16px,1.65vw,23px);line-height:1.85}
+.detail-resume strong{font-weight:700}
+@media(max-width:760px){.detail-simple{grid-template-columns:1fr;gap:24px;padding:24px}.detail-simple img{width:min(100%,320px);max-height:420px}.detail-resume h1{font-size:28px}.detail-resume li{font-size:16px}}
+@media(max-width:380px){.detail-simple{padding:20px}.detail-simple img{max-height:340px}}

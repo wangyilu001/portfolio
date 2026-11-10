@@ -1,0 +1,60 @@
+/* Keep the desktop About link separate from the illustrated hotspots. */
+.island-section-links { position: absolute; inset: auto 20px 17px auto; z-index: 1; }
+.island-section-links a {
+  display: inline-grid;
+  min-height: 44px;
+  place-items: center;
+  padding: 5px 15px;
+  border: 1.5px solid #74344d;
+  border-radius: 24px;
+  background: #fff4e8;
+  color: #4b2937;
+  font-size: 14px;
+  font-weight: 700;
+}
+@media (max-width: 540px) {
+  .island-section-links { display: none; }
+  .portfolio-pages .island-board { width: 100%; }
+
+  /* The next card peeks into the frame and the timeline stays scrollable by touch. */
+  .portfolio-pages #main > #internships { justify-content: flex-start; }
+  #internships .journey-scroll {
+    overflow-x: auto;
+    padding: 0 4px 10px;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+  }
+  #internships .journey-track {
+    grid-template-columns: repeat(4, min(77vw, 270px));
+    gap: 12px;
+    width: max-content;
+  }
+  #internships .journey-stop { scroll-snap-align: start; }
+  #internships .journey-position { font-size: 14px; }
+  #internships .journey-date > span { font-size: 14px; }
+  #internships .journey-company h4 { font-size: 21px; }
+  #internships .company-logo { zoom: .8; }
+  #internships .journey-image { max-height: none; }
+  #internships .journey-outcome { padding: 9px 12px; }
+  #internships .journey-outcome strong { font-size: 20px; }
+  #internships .journey-outcome strong span,
+  #internships .journey-outcome p { font-size: 12px; }
+  #internships .journey-learning { flex-wrap: wrap; margin-top: 10px; }
+  #internships .journey-learning span { flex: 0 1 auto; }
+
+  .experience-detail-page .exp-entry-content { grid-template-columns: minmax(0, 1fr); }
+  .experience-detail-page .exp-poster { width: min(100%, 260px); margin-inline: auto; }
+  .experience-detail-page .exp-summary,
+  .experience-detail-page .detail-task .exp-task-content { font-size: 14px; }
+
+  .portfolio-pages #work { justify-content: flex-start; }
+  .project-editorial { display: contents; }
+  .project-feature { grid-template-rows: none; }
+  .project-evidence { order: 1; }
+  .project-editorial > h3 { margin-bottom: 0; }
+  .product-tabs { grid-template-columns: repeat(3, minmax(0, 1fr)); border-radius: 18px; }
+  .product-tabs button { min-height: 44px; font-size: 12px; }
+  .product-device { height: clamp(300px, calc(100dvh - 515px), 365px); }
+  .product-stage-caption strong { font-size: 15px; }
+  .product-stage-caption p { font-size: 12px; }
+}

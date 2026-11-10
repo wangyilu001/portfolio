@@ -1,0 +1,19 @@
+/* Place the key figures and prototype link above the demo on narrow screens. */
+@media (max-width: 760px) {
+  #work .project-feature {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  #work .project-editorial { display: contents; }
+  #work .project-category { display: none; }
+  #work .project-editorial > h3 { order: 0; margin: 0; }
+  #work .project-lead { order: 1; }
+  #work .project-evidence { order: 2; margin: 0; }
+  #work .project-links { order: 3; margin: 0; justify-content: center; }
+  #work .product-showcase { order: 4; width: 100%; }
+  #work .project-context,
+  #work .project-journey,
+  #work .project-contribution { display: none; }
+}

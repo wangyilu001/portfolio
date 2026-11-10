@@ -1,0 +1,7 @@
+.portfolio-pages .hero-character{width:clamp(240px,min(31vw,54vh),420px);transform:translate(-50%,-50%)!important;animation:none!important;transition:none;filter:drop-shadow(0 7px 8px #12182b26);touch-action:pan-y}
+.hero-character .hero-poster{display:block;width:100%;height:100%;object-fit:contain;pointer-events:none}
+.hero-character .hero-sprite{display:block;position:absolute;inset:0;background-repeat:no-repeat;pointer-events:none}
+.hero-character [hidden]{display:none!important}
+.hero-character:focus-visible{outline:2px solid var(--paper);outline-offset:8px;border-radius:35%}
+@media(max-width:760px){.portfolio-pages .hero-character{width:min(68vw,41vh);min-width:190px;max-width:300px}}
+@media(prefers-reduced-motion:reduce){.portfolio-pages .hero-character{transform:translate(-50%,-50%)!important}}

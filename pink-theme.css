@@ -1,0 +1,277 @@
+/* One pink paper world; the illustrated home is the only directory. */
+:root{--navy:#4b2937;--paper:#fff3e7;--pink:#f5a4c1;--orange:#ee86a9;--lavender:#f8cede}
+body.portfolio-pages,body.experience-detail-page{color:#4b2937;background-color:#fbd5e3;background-image:radial-gradient(ellipse at 0 100%,#f39cba70,transparent 60%),radial-gradient(ellipse at 100% 0,#fff3e7b0,transparent 55%)}
+body.portfolio-pages{--site-header:64px!important}
+body.portfolio-pages[data-view="home"]{--site-header:0px!important;background:#fff1df}
+.island-back{position:fixed;top:16px;left:5%;z-index:25;display:inline-flex;align-items:center;min-height:40px;padding:7px 18px;border:1.5px solid #70434e;border-radius:10px 15px 11px 14px;background:#fff3e7;color:#4b2937;font-family:"Trebuchet MS",Arial,sans-serif;font-size:15px;font-weight:700;box-shadow:3px 3px 0 #ed9bb5;text-decoration:none}
+.island-back:hover{background:#ffdfeb}.island-back:focus-visible{outline:3px dashed #71354d;outline-offset:4px}
+body[data-view="home"]>.island-back,body.is-intro-loading>.island-back{display:none}
+.portfolio-pages #education,.portfolio-pages #internships,.portfolio-pages #work,.portfolio-pages #about{background:transparent;color:#4b2937}
+.portfolio-pages .hero.island-home{background:transparent}
+.portfolio-pages [data-view]:not(.hero){overflow-y:auto;overscroll-behavior:contain}
+.journey-board{--ink:#4b2937;--sheet:#fff6eb;border-color:#ad7787;box-shadow:7px 8px 0 #ed9bb5}
+.journey-stop,.journey-stop--kwai,.journey-stop--byte{--chapter:#fac6d8;--chapter-ink:#74344d}
+.journey-stop--kwai{--chapter:#ffdfeb}.journey-stop--byte{--chapter:#f2b0c9}
+.journey-card{border-color:#9b6777}.journey-card-head{border-bottom-color:#c38a9d}
+.journey-date::before{background:#d89aad}.journey-date::after{border-color:#c6819d}
+.journey-date span,.journey-outcome p,.journey-board-head p{color:#795465}
+.project-category,.project-editorial>h3>span,.project-context,.project-contribution span,.project-evidence dd,.product-stage-caption p{color:#795465}
+.project-journey span,.product-tabs{background:#f7c8db}
+.product-stage{background:radial-gradient(ellipse at 50% 42%,#fff2f3 10%,#f7dce6 77%)}.product-stage-index{color:#bc8097}
+.project-links a,.product-tabs button[aria-selected="true"]{background:#793c55;color:#fff6ec;border-color:#793c55}
+.project-links button{color:#61364b;border-color:#9b6777}
+.product-device{border-color:#714054;box-shadow:0 8px 20px #8b415929}
+.product-stage-tag{background:#ffe5ed;color:#6f3e52}
+.portfolio-pages .outside-heading,.portfolio-pages .interest,.portfolio-pages .contact{color:#4b2937}
+.portfolio-pages .interest{background:#fff3e7;border-color:#b78396}
+.portfolio-pages .interest-climb{background:#f8c0d5}.portfolio-pages .interest-bike{background:#fce0e9}
+.portfolio-pages .contact{background:transparent;border-color:#bb8095}
+.portfolio-pages .contact-bottom>a,.portfolio-pages .contact-top,.portfolio-pages .footer-meta{color:#61364b}
+.island-intro{background:#f8c5d8;background-image:radial-gradient(ellipse at 15% 95%,#f28bb780,transparent 65%),radial-gradient(ellipse at 90% 0,#fff3e7c0,transparent 65%);color:#6f304d}
+.intro-content h2{color:#71334f}.intro-loading{color:#754059}
+#intro-progress{background:#b7658633;color:#cf5b8a}
+#intro-progress::-webkit-progress-bar{background:#b7658633}#intro-progress::-webkit-progress-value{background:#cf5b8a}#intro-progress::-moz-progress-bar{background:#cf5b8a}
+#intro-retry{color:#71334f;border-color:#a75b79}
+dialog{background:#fff2e8;color:#4b2937;border-color:#b78396}
+.experience-detail-page{padding-top:78px}
+.experience-detail-page .exp-entry{background:#fff3e7;color:#4b2937;border:1.5px solid #b78396;box-shadow:7px 8px 0 #ed9bb5}
+.experience-detail-page .exp-entry--byte,.experience-detail-page .exp-entry--kwai,.experience-detail-page .exp-entry--cicc{background:#fff3e7;color:#4b2937}
+.experience-detail-page .exp-company-heading,.detail-task,.detail-task-list{border-color:#d4a2b3}
+.experience-detail-page .exp-date,.experience-detail-page .exp-summary,.detail-source{color:#795465}
+.experience-detail-page .exp-finding{background:#f9d7e4;color:#6d3c52}
+@media(max-width:760px){body.portfolio-pages{--site-header:68px!important}.island-back{top:14px;left:5%;font-size:14px}.portfolio-pages .island-board{width:100%}}
+.portfolio-pages #main{margin-top:var(--site-header)}
+.portfolio-pages .experience-heading h2,.portfolio-pages .experience-heading h2 span,.portfolio-pages .outside-heading h2,.portfolio-pages .thinking-intro h2{color:#4b2937;opacity:1}
+.portfolio-pages .experience-intro p,.journey-thoughts,.journey-thoughts span{color:#795465}
+.journey-thoughts{background:#f9d7e4}
+.portfolio-pages .outside-heading p,.portfolio-pages .interest small,.portfolio-pages .contact-top,.portfolio-pages .contact-bottom,.portfolio-pages .footer-meta,.portfolio-pages .outside-note{color:#795465;opacity:1}
+/* Reference-led scrapbook: torn letter tiles, wax marks and stacked paper. */
+body.portfolio-pages:not([data-view="home"]),body.experience-detail-page{background-color:#60213e;background-image:radial-gradient(ellipse at 95% 100%,#e5498e90,transparent 65%)}
+.portfolio-pages:not([data-view="home"]) #main{width:calc(100% - 36px);height:calc(100dvh - 88px);margin-left:14px}
+.portfolio-pages #main>[data-view]:not(.hero){background:#fff7e9;border:1px solid #fffdf6;border-radius:26px 30px 24px 28px;box-shadow:11px 12px 0 #f24d94;padding:24px 28px;color:#392332}
+.island-back{left:auto;right:25px;top:12px;background:#ffdf78;border:2px solid #32232b;box-shadow:3px 4px 0 #291c27;color:#32232b;border-radius:22px;min-height:39px;padding:6px 17px}
+.island-back:hover{background:#ffe99d}
+.journey-board{border:0;box-shadow:none;background:transparent;padding:18px 0 12px;margin:0}
+.journey-card{border:2px solid #694e58;border-radius:13px 17px 11px 15px}
+.journey-card::after{border-color:#8e738280}
+.journey-card-head{background:linear-gradient(120deg,var(--chapter),#fff7ee);border-bottom:1px dashed #9b7986}
+.journey-thoughts{background:#f6d9e5;border-radius:40px}
+.experience-detail-page .exp-entry{border-radius:26px 30px 24px 28px;box-shadow:11px 12px 0 #f24d94}
+.island-intro{background:#fff4e5;background-image:radial-gradient(ellipse at -5% 90%,#ff4d9fbb,transparent 58%),radial-gradient(ellipse at 2% 0,#f98ab7a0,transparent 35%);isolation:isolate}
+.island-intro::after{content:"";position:absolute;bottom:0;left:0;right:0;height:90px;background-image:url('assets/island/homepage-v3.jpg');background-size:1536px 1024px;background-position:left bottom;z-index:-1}
+.intro-content{width:min(1100px,92%);display:grid;grid-template-columns:1.15fr 1fr;grid-template-rows:auto auto;column-gap:30px;row-gap:48px;text-align:left;align-items:center;position:relative;z-index:1;padding:40px 0}
+.intro-content h2{grid-column:1;grid-row:1;font-size:clamp(35px,5.3vw,68px);line-height:1.25;color:#22171c;letter-spacing:-.045em;transform:rotate(-4deg)}
+.collage-title{display:flex;flex-wrap:wrap;gap:10px 16px}
+.collage-word{display:inline-flex;gap:3px;white-space:nowrap}
+.collage-letter{display:inline-block;background:#fff6e8;padding:0 .06em;line-height:1.18;font-weight:950;text-transform:uppercase;box-shadow:2px 3px 0 #ed87af;clip-path:polygon(3% 4%,96% 0,100% 94%,5% 100%,0 48%);border:2px solid #f3b2c9;transform:rotate(3deg)}
+.collage-letter:nth-child(even){background:#f7afc8;transform:rotate(-4deg)}
+.collage-letter:nth-child(3n){background:#f4e3d4;transform:rotate(6deg)}
+.portfolio-pages .island-intro .intro-character{grid-column:2;grid-row:1 / 3;width:100%;max-width:440px;aspect-ratio:1;justify-self:center;isolation:isolate}
+.intro-character::before{content:"";position:absolute;inset:0 -3% 0 0;border-radius:50%;background:linear-gradient(170deg,#ffeb8b 0 25%,#f9c1ce 25% 100%);border:3px solid #fff9e9;box-shadow:10px 9px 0 #32232b;z-index:-1}
+.intro-character .hero-poster{position:relative}
+.intro-loading{grid-column:1;grid-row:2;width:min(340px,90%);color:#743849;justify-self:center;background:#fff6e8b0;border-radius:16px;padding:16px 20px}
+#intro-progress{height:19px;border:2px solid #fff9ed;box-shadow:0 0 0 1px #995f72;background:#ffe990}
+#intro-progress::-webkit-progress-bar{background:#ffe990}#intro-progress::-webkit-progress-value{background:#ee719d}#intro-progress::-moz-progress-bar{background:#ee719d}
+.intro-progress-label{font-size:12px;font-weight:700}
+.intro-sparkles{position:absolute;inset:0;pointer-events:none;z-index:0;color:#ffdd51;font-size:45px;-webkit-text-stroke:2px #32232b}
+.intro-sparkles span{position:absolute}.intro-sparkles span:nth-child(1){left:6%;top:8%}.intro-sparkles span:nth-child(2){right:8%;top:12%;font-size:33px}.intro-sparkles span:nth-child(3){left:47%;bottom:14%}.intro-sparkles span:nth-child(4){right:5%;bottom:15%;font-size:30px}
+@media(max-width:760px){
+ .portfolio-pages #main>[data-view]:not(.hero){padding:20px 16px;border-radius:22px}
+ .portfolio-pages:not([data-view="home"]) #main{width:calc(100% - 30px);margin-left:10px;height:calc(100dvh - 87px)}
+ .island-back{right:20px;left:auto}
+ .intro-content{display:flex;flex-direction:column;gap:25px;padding:30px 0;width:88%;text-align:center}
+ .intro-content h2{font-size:clamp(31px,8.4vw,52px);max-width:540px}
+ .collage-title{justify-content:center;gap:8px 14px}
+ .portfolio-pages .island-intro .intro-character{width:min(64vw,35dvh,310px)}
+ .intro-loading{width:min(310px,88%);margin:0}
+}
+@media(max-height:540px) and (min-width:600px){.intro-content{display:grid;grid-template-columns:1.1fr 1fr;gap:18px}.intro-content h2{font-size:38px}.portfolio-pages .island-intro .intro-character{width:min(43vw,65dvh)}.intro-loading{padding:10px}}
+/* Scale the artwork and its hotspots together over a full-screen paper backdrop. */
+body.portfolio-pages[data-view="home"] #main{width:100%;height:100dvh;margin:0}
+.portfolio-pages .hero.island-home {
+  padding: 0;
+  gap: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff1df url("assets/island/intro-crayon-paper.jpg") center / cover no-repeat;
+}
+.portfolio-pages .island-board {
+  width: min(94%, 149dvh);
+}
+@media (max-aspect-ratio: 6/5) {
+  .portfolio-pages .hero.island-home {
+    background-size: 100% 100%;
+  }
+  .portfolio-pages .hero.island-home::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background: inherit;
+    transform: scaleX(-1);
+    mask-image: radial-gradient(ellipse at left top, #000 6%, transparent 43%);
+  }
+}
+/* Trace the actual objects in the original artwork's 1536 × 1024 coordinate space. */
+.island-link{border:0;background:transparent;box-shadow:none;cursor:pointer}
+.island-link:hover{background:transparent;box-shadow:none}
+.island-link:focus-visible,.island-character-button:focus-visible{outline:2px dashed #71354d;outline-offset:4px;background:transparent;box-shadow:none}
+.island-effects{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none}
+.island-cutout{transform-box:view-box;transition:transform .24s ease;filter:drop-shadow(0 4px 4px #71354d40)}
+.island-cutout--resume{transform-origin:580px 268px}
+.island-cutout--demo{transform-origin:387px 722px}
+.island-cutout--internship{transform-origin:1450px 245px}
+.island-cutout--finance{transform-origin:1263px 745px}
+.island-board:has(.island-link--resume:is(:hover,:focus-visible,:active)) .island-cutout--resume,
+.island-board:has(.island-link--demo:is(:hover,:focus-visible,:active)) .island-cutout--demo,
+.island-board:has(.island-link--internship:is(:hover,:focus-visible,:active)) .island-cutout--internship,
+.island-board:has(.island-link--finance:is(:hover,:focus-visible,:active)) .island-cutout--finance{opacity:1;transform:translateY(-5px) scale(1.055)}
+.island-link-tip{position:absolute;left:50%;bottom:100%;margin-bottom:8px;transform:translateX(-50%);padding:5px 11px;border:1px solid #8d5268;border-radius:9px 13px 10px 12px;background:#fff6e6;color:#592f42;font-size:clamp(11px,1.25vw,15px);font-weight:700;white-space:nowrap;pointer-events:none;opacity:0;transition:opacity .15s ease}
+.island-link:is(:hover,:focus-visible){z-index:1}
+.island-link:is(:hover,:focus-visible) .island-link-tip{opacity:1}
+.island-character-button{position:absolute;left:46%;top:23%;width:20%;height:65%;border:0;border-radius:44% 44% 30% 30%;padding:0;background:transparent;cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+.island-wink,.island-hello-sparks{opacity:0}
+.island-board.is-saying-hello .island-wink{animation:island-wink .82s ease both}
+.island-board.is-saying-hello .island-hello-sparks{animation:island-sparks .82s ease both}
+@keyframes island-wink{0%,52%,100%{opacity:0}10%,36%{opacity:1}}
+@keyframes island-sparks{0%,100%{opacity:0}12%,68%{opacity:1}}
+@media(prefers-reduced-motion:reduce){
+ .island-cutout,.island-link-tip{transition:none}
+ .island-board .island-cutout{transform:none!important}
+}
+/* The submitted island is a separate layer behind the original turning sprite. */
+.intro-scene{grid-column:2;grid-row:1 / 3;display:grid;place-items:center;position:relative;isolation:isolate;width:100%;aspect-ratio:1.32;min-width:0}
+.intro-island-art{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 51%;pointer-events:none;z-index:-1;mask-image:radial-gradient(ellipse at 50% 51%,#000 58%,#000b 72%,transparent 96%)}
+.portfolio-pages .island-intro .intro-scene .intro-character{grid-area:1 / 1;width:51%;max-width:315px;margin-top:-10%;filter:drop-shadow(0 9px 7px #5b293b39)}
+.intro-scene .intro-character::before{display:none}
+@media(max-width:760px){.intro-scene{width:min(100%,515px);aspect-ratio:1.4}.portfolio-pages .island-intro .intro-scene .intro-character{width:53%}}
+@media(max-height:540px) and (min-width:600px){.intro-scene{width:min(100%,78dvh);justify-self:center}}
+/* The intro is one crayon sheet, with the island and turning figure as cutouts. */
+.island-intro{background:#fff2df;isolation:isolate}
+.island-intro::after{display:none}
+.intro-paper-art{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;object-position:50% 55%;pointer-events:none;z-index:-1}
+.intro-content{width:min(1320px,90%);column-gap:clamp(22px,4vw,70px);row-gap:clamp(36px,9vh,92px)}
+.intro-content h2{font-family:"Arial Black","Trebuchet MS",sans-serif;font-size:clamp(35px,5.5vw,76px);transform:rotate(-5deg)}
+.collage-title{gap:10px 14px}
+.collage-word{filter:drop-shadow(0 2px 0 #fff6de) drop-shadow(2px 3px 0 #d85789)}
+.collage-letter{border:0;padding:.03em .075em .04em;font-weight:1000;clip-path:polygon(2% 3%,21% 0,38% 4%,61% 1%,83% 3%,97% 0,100% 29%,97% 50%,100% 76%,98% 96%,84% 100%,66% 96%,50% 100%,27% 98%,9% 100%,1% 95%,3% 77%,0 55%,2% 28%);background-image:linear-gradient(#fff7ecba,#fff7ecba),url('assets/island/intro-crayon-paper.jpg');background-size:auto,460px 307px;background-position:center,15% 15%}
+.collage-letter:nth-child(even){background-image:linear-gradient(#ffc0d18a,#ffc0d18a),url('assets/island/intro-crayon-paper.jpg');background-position:center,left bottom}
+.collage-letter:nth-child(3n){background-image:linear-gradient(#ffd2c280,#ffd2c280),url('assets/island/intro-crayon-paper.jpg');background-position:center,left center}
+.intro-scene{aspect-ratio:1.03}
+.intro-island-art{inset:auto 0 1%;width:100%;height:78%;object-fit:contain;object-position:center bottom;mask-image:none;z-index:-1;filter:drop-shadow(4px 6px 0 #70334e32)}
+.portfolio-pages .island-intro .intro-scene .intro-character{width:54%;max-width:340px;margin-top:-8%;filter:drop-shadow(1px 0 0 #fff3db) drop-shadow(-1px 0 0 #fff3db) drop-shadow(0 2px 0 #fff3db) drop-shadow(0 8px 5px #71375445)}
+.intro-loading{background:#fff2dce8;border:2px solid #fff8e7;border-radius:16px 12px 15px 12px;box-shadow:4px 5px 0 #be467682;transform:rotate(-2deg);justify-self:start;margin-left:9%;color:#572b40}
+.intro-progress-label{font-weight:800}
+#intro-progress{height:22px;background:#ffea8e;border:2px solid #fff9e8;box-shadow:0 0 0 1px #843951}
+#intro-progress::-webkit-progress-value{background:#ef7796}#intro-progress::-moz-progress-bar{background:#ef7796}
+.intro-sparkles{color:#ffdf52}
+@media(max-width:760px){.intro-content{row-gap:16px;gap:16px;width:90%;padding:26px 0}.intro-content h2{font-size:clamp(29px,7.8vw,53px)}.intro-scene{width:min(100%,485px);aspect-ratio:1.35}.intro-loading{margin:0;justify-self:center}.intro-paper-art{object-position:43% 60%}}
+@media(max-height:540px) and (min-width:600px){.intro-content h2{font-size:clamp(31px,5vw,49px)}.intro-content{row-gap:24px}.intro-scene{width:min(100%,82dvh)}}
+/* The resume reads as part of the same paper notebook as the other sections. */
+.resume-view{scrollbar-color:#d98ba9 #fff7e9;scrollbar-width:thin}
+.resume-sheet{max-width:800px;margin:0 auto;padding:clamp(6px,2vw,24px) 0 24px;line-height:1.7}
+.resume-heading{padding-bottom:20px;border-bottom:2px solid #e7a6bb}
+.resume-heading h2{font-size:clamp(28px,4vw,48px);line-height:1.1;margin-bottom:10px}
+.resume-heading h2 span{font-size:.55em;color:#99536c}
+.resume-heading p{font-size:20px;font-weight:750}
+.resume-heading a{color:#874663;text-decoration:underline;text-underline-offset:3px}
+.resume-group{margin-top:28px;font-size:15px}
+.resume-group h3{display:inline-block;padding:3px 12px;margin-bottom:12px;background:#f9c8da;border-radius:5px 9px 6px 10px;color:#572d43;font-size:18px}
+.resume-entry{padding:13px 0;border-bottom:1px dashed #d8a7b8}
+.resume-entry header{display:flex;align-items:baseline;justify-content:space-between;gap:2px 16px;flex-wrap:wrap}
+.resume-entry h4{font-size:17px;color:#392332}
+.resume-date,.resume-role{color:#7c4a62;font-size:14px}
+.resume-entry ul{margin:6px 0 0;padding-left:1.25em}
+.resume-entry li+li,.resume-group>p+p{margin-top:5px}
+/* The welcome character uses the original video atlas on top of the island. */
+.intro-scene .intro-character {
+  display: block;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+}
+.intro-character .hero-poster { display: block; width: 100%; height: 100%; object-fit: contain; }
+.intro-character .hero-sprite { position: absolute; inset: 0; background-repeat: no-repeat; }
+.intro-character [hidden] { display: none !important; }
+
+/* Small paper tiles for the message beside the loading percentage. */
+.intro-loading-copy{display:inline-flex;align-items:center;gap:2px;white-space:nowrap;font-size:clamp(11px,1.45vw,14px)}
+.intro-loading-copy>span{display:inline-block;padding:2px 4px;background:#fff8e8;box-shadow:1px 2px 0 #c47090;transform:rotate(-3deg)}
+.intro-loading-copy>span:nth-child(2){background:#f7abc8;color:#63263f;transform:rotate(3deg)}
+.intro-loading-copy>span:last-child{background:#ffe5ce;transform:rotate(-2deg)}
+#intro-status:not(.sr-only){display:block;margin-top:9px;font-size:12px;color:#572b40}
+
+/* Details use the same paper frame as the internship overview. */
+.experience-detail-page {
+  min-height: 100dvh;
+  padding: 64px 0 23px;
+}
+.experience-detail-page .detail-article-wrap { padding-inline: clamp(12px, 2.2vw, 32px); }
+.experience-detail-page .exp-entry-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: safe center;
+  min-height: calc(100dvh - 90px);
+  padding: clamp(13px, 2.8vh, 26px) clamp(16px, 4vw, 58px);
+}
+.experience-detail-page .exp-company-heading {
+  align-items: center;
+  padding-bottom: clamp(8px, 1.5vh, 15px);
+}
+.experience-detail-page .exp-company-heading h1 {
+  font-size: clamp(29px, min(5vw, 7vh), 62px);
+  letter-spacing: -.045em;
+  line-height: 1.15;
+}
+.experience-detail-page .exp-company-heading h1 span { display: inline-block; margin: 0 0 0 12px; }
+.experience-detail-page .exp-entry-content {
+  grid-template-columns: minmax(0, min(28%, 270px)) minmax(0, 1fr);
+  gap: clamp(16px, 4vw, 56px);
+  align-items: start;
+  padding-top: clamp(10px, 2.4vh, 22px);
+}
+.experience-detail-page .exp-poster { display: block; position: static; }
+.experience-detail-page .experience-visual--portrait { margin: 0 0 8px; }
+.experience-detail-page .experience-visual--portrait img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: max(110px, calc(100dvh - 300px));
+  object-fit: contain;
+}
+.experience-detail-page .experience-visual--portrait figcaption { padding: 6px 8px; }
+.experience-detail-page .exp-result {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+  margin: 0;
+  padding: 0;
+}
+.experience-detail-page .exp-result strong { font-size: clamp(23px, 4vh, 38px); line-height: 1.1; letter-spacing: -.04em; }
+.experience-detail-page .exp-result strong span { font-size: .55em; }
+.experience-detail-page .exp-result p { margin: 0; padding: 0; border: 0; font-size: 10px; }
+.experience-detail-page .exp-role { margin: 0 0 4px; }
+.experience-detail-page .exp-description h2 {
+  margin: 0 0 8px;
+  font-size: clamp(20px, 3vw, 38px);
+  line-height: 1.2;
+  letter-spacing: -.035em;
+}
+.experience-detail-page .exp-summary { margin: 0; font-size: clamp(12px, 1.45vw, 15px); line-height: 1.5; }
+.experience-detail-page .detail-task-list {
+  display: grid;
+  gap: 0 clamp(14px, 2.4vw, 28px);
+  margin-top: clamp(9px, 1.8vh, 16px);
+}
+.experience-detail-page .detail-task { padding-top: 8px; }
+.experience-detail-page .detail-task h3 { font-size: clamp(13px, 1.6vw, 18px); line-height: 1.3; margin: 0 0 6px; }
+.experience-detail-page .detail-task .exp-task-content { font-size: clamp(11px, 1.25vw, 14px); line-height: 1.55; padding: 0 0 8px; }
+.experience-detail-page .exp-task-content p + p { margin-top: 5px; }
+.experience-detail-page .exp-finding { padding: 6px 8px; }
+.experience-detail-page .exp-methods { margin: 8px 0 0; font-size: 10px; line-height: 1.4; }
+@media (min-width: 1051px) {
+  .experience-detail-page .detail-task-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}

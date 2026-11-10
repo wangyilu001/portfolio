@@ -1,0 +1,178 @@
+/* A chronological illustrated journey: one narrow portrait per internship. */
+.journey-board{--ink:#27314a;--sheet:#fffaf0;position:relative;background:var(--sheet);color:var(--ink);border:2px solid #fff;border-radius:30px;box-shadow:10px 12px 0 var(--pink);padding:28px 24px 25px;margin:0 8px 22px 0}
+.journey-board-head{display:flex;justify-content:flex-end;align-items:center;gap:20px;padding:0 10px 22px}
+.journey-board-head h3{font-size:25px;letter-spacing:-.8px;line-height:1.5}
+.journey-board-head p{font-size:12px;line-height:1.8;color:#647086;margin-top:5px}
+.journey-sticker{display:grid;place-items:center;background:#ffe38b;border:2px solid var(--ink);border-radius:48% 52% 44% 56%;width:46px;height:46px;font-size:27px;box-shadow:3px 3px 0 var(--ink);transform:rotate(9deg);flex-shrink:0}
+.journey-scroll{overflow-x:auto;overscroll-behavior-inline:contain;scroll-snap-type:x proximity;padding:3px 10px 12px;scrollbar-color:#e8a8bc transparent;scrollbar-width:thin}
+.journey-track{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;list-style:none;padding:0;margin:0;min-width:780px}
+.journey-stop{min-width:0;position:relative;scroll-snap-align:center;--chapter:#edb9b5;--chapter-ink:#790b11}
+.journey-stop--kwai{--chapter:#fbc29b;--chapter-ink:#ab3900}.journey-stop--byte{--chapter:#b6d6f2;--chapter-ink:#245195}
+.journey-date{height:71px;position:relative;padding:0 0 26px 17px;display:flex;flex-direction:column;justify-content:flex-start}
+.journey-date::before{content:"";position:absolute;bottom:13px;left:-20px;right:0;height:3px;background:#bdc6d0}
+.journey-stop:first-child .journey-date::before{left:17px}.journey-stop:last-child .journey-date::before{right:0}
+.journey-date::after{content:"";position:absolute;bottom:6px;left:11px;width:16px;height:16px;border-radius:50%;border:3px solid #8698ad;background:var(--sheet);z-index:1;box-shadow:0 0 0 4px var(--sheet)}
+.journey-stop:last-child .journey-date::after{border-color:var(--chapter-ink);background:var(--sheet)}
+.journey-date strong{font-size:16px;letter-spacing:-.5px;font-weight:750}.journey-date span{font-size:10px;margin-top:4px;color:#647086}
+.journey-card{display:block;background:#fff;border:1.5px solid #495269;border-radius:15px 12px 16px 10px;overflow:hidden;position:relative;box-shadow:2px 3px 0 #27314a18;transition:transform .2s,box-shadow .2s}
+.journey-card::after{content:"";position:absolute;inset:4px;border:1px dashed #8d95a670;border-radius:12px 9px 13px 8px;pointer-events:none}
+.journey-card:hover,.journey-card:focus-visible{transform:translateY(-5px);box-shadow:3px 7px 0 var(--chapter)}
+.journey-card-head{background:var(--chapter);padding:16px 17px 13px;min-height:91px;border-bottom:1px solid #27314a35;position:relative;z-index:1}
+.journey-company{display:flex;align-items:baseline;justify-content:space-between;gap:8px}.journey-company h4{font-size:24px;letter-spacing:-.8px;margin:0;line-height:1.35}.journey-company>span{font-size:10px;opacity:.65}
+.journey-card-head p{font-size:10px;margin-top:7px;line-height:1.7}
+.journey-image{display:block;width:100%;height:auto;aspect-ratio:2/3;object-fit:contain;background:#fffdf9}
+.journey-outcome{position:relative;z-index:1;padding:13px 17px 15px;border-top:1px solid #27314a20;background:var(--sheet);min-height:89px}
+.journey-outcome strong{font-size:23px;letter-spacing:-.8px;font-weight:800}.journey-outcome strong span{font-size:11px;letter-spacing:0;margin-left:5px;font-weight:650}.journey-outcome p{font-size:10px;line-height:1.7;color:#626b7e;margin-top:3px}
+.journey-open{float:right;font-size:23px;margin-top:1px}
+.journey-learning{display:flex;align-items:center;gap:12px;justify-content:center;background:#e4e9ef;border-radius:50px;padding:13px 18px;margin:20px 10px 0}
+.journey-learning span{font-size:12px;font-weight:700;border:1px solid #708299;background:#fffefa;border-radius:25px;padding:8px 18px;white-space:nowrap}.journey-learning i{font-style:normal;color:#8391a5}.journey-learning span:last-child{color:#c42b64;border-color:#d75d8c;background:#ffebf1}
+.journey-mobile-hint{display:none}.experience-visual--portrait{margin:0 0 20px;max-width:390px;border:1px solid #1d244040;border-radius:16px}
+.experience-visual--portrait img{aspect-ratio:2/3}.experience-visual--portrait figcaption{padding:13px 16px;font-size:10px;flex-wrap:wrap;gap:6px}
+.experience-detail-page .exp-poster:has(.experience-visual--portrait){position:static;padding-top:0}
+@media(max-width:1050px){.journey-board{padding:24px 16px 20px}.journey-track{gap:16px}.journey-learning span{font-size:11px;padding:8px 14px}.journey-learning{gap:8px}}
+@media(max-width:760px){.journey-board{padding:22px 9px 18px;border-radius:22px;box-shadow:6px 8px 0 var(--pink);margin-right:5px}.journey-board-head{padding:0 10px 19px;gap:12px}.journey-board-head h3{font-size:21px}.journey-board-head p{font-size:10px}.journey-sticker{width:37px;height:37px;font-size:22px}.journey-mobile-hint{display:block;margin:0 10px 14px;font-size:10px;color:#6c7588}.journey-track{grid-template-columns:repeat(3,260px);gap:16px;min-width:0;width:max-content;padding-right:5px}.journey-date{height:68px}.journey-date strong{font-size:14px}.journey-card-head{min-height:88px}.journey-learning{padding:12px 8px;margin:16px 6px 0;gap:5px;border-radius:16px;flex-wrap:wrap}.journey-learning span{font-size:10px;padding:6px 9px}.journey-learning i{font-size:11px}.experience-detail-page .exp-poster:has(.experience-visual--portrait){display:block}.experience-visual--portrait{max-width:360px;margin:0 auto 20px}.journey-card:hover{transform:none}}
+@media(prefers-reduced-motion:reduce){.journey-card{transition:none}.journey-card:hover{transform:none}}
+
+/* The timeline carries the role; the card heading contains only logo + name. */
+.journey-date{height:80px}
+.journey-date-top{display:flex;align-items:baseline;gap:10px;white-space:nowrap}
+.journey-date .journey-position{font-size:14px;font-weight:700;color:var(--ink);margin:0}
+.journey-card .journey-card-head{min-height:76px;height:76px;padding:14px 17px;display:flex;align-items:center}
+.journey-company{align-items:center;justify-content:flex-start;gap:12px}
+.journey-company>.company-logo{position:relative;display:block;width:44px;height:44px;flex:0 0 44px;overflow:hidden;opacity:1;mix-blend-mode:multiply}
+.company-logo img{display:block;position:absolute;max-width:none;object-fit:contain}
+/* Display the supplied symbol within the heading; keep original JPGs intact. */
+.company-logo--cicc img{width:91px;height:auto;left:-24px;top:-5px}
+.company-logo--byte img{width:214px;height:auto;left:-16px;top:-50px}
+.company-logo--kwai{border-radius:10px}
+.company-logo--kwai img{width:44px;height:44px;left:0;top:0}
+@media(max-width:760px){.journey-date{height:78px}.journey-date-top{gap:9px}.journey-date .journey-position{font-size:12px}.journey-company h4{font-size:23px}}
+
+.journey-board-head h3>span{display:inline-block;font-size:15px;font-weight:600;letter-spacing:0;margin-left:10px;color:#647086}
+.journey-sticker{cursor:pointer;transition:transform .2s}
+.journey-sticker:hover{transform:rotate(0deg)}
+.journey-stop .journey-date::after{border-color:var(--chapter-ink);background:var(--sheet)}
+.journey-company h4{color:var(--chapter-ink)}
+@media(max-width:760px){.journey-board-head h3>span{display:block;margin:3px 0 0;font-size:12px}.journey-date .journey-position{font-size:13px}}
+@media(prefers-reduced-motion:reduce){.journey-sticker{transition:none}}
+
+.experience-heading h2>span{display:block;font:inherit;letter-spacing:inherit}
+
+/* The chapter overview keeps the four complete cards in the available viewport. */
+.portfolio-pages #main > #internships {
+  display: flex;
+  flex-direction: column;
+  justify-content: safe center;
+  gap: clamp(10px, 2vh, 20px);
+}
+#internships .experience-heading,
+#internships .experience-card-area {
+  width: 100%;
+  max-width: clamp(320px, calc((100dvh - 485px) * 8 / 3 + 60px), 1100px);
+  padding: 0;
+  flex: none;
+}
+#internships .experience-heading h2 {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 2px 14px;
+  margin: 0;
+  font-size: clamp(26px, min(4.5vw, 6vh), 56px);
+  line-height: 1.16;
+  letter-spacing: -.045em;
+  white-space: normal;
+}
+#internships .experience-heading h2 [lang="en"] {
+  font-size: .48em;
+  letter-spacing: 0;
+}
+#internships .journey-board { padding: 0; }
+#internships .journey-scroll { overflow: visible; padding: 0 0 4px; }
+#internships .journey-track {
+  --stop-gap: clamp(8px, 1.65vw, 20px);
+  grid-template-columns: repeat(4,minmax(0,1fr));
+  gap: var(--stop-gap);
+  width: auto;
+  min-width: 0;
+  padding: 0;
+}
+#internships .journey-date {
+  height: 62px;
+  padding: 0 0 17px 2px;
+}
+#internships .journey-date-top { white-space: normal; }
+#internships .journey-position {
+  font-family: "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  font-size: clamp(11px, 1.55vw, 17px);
+  font-weight: 650;
+  letter-spacing: .015em;
+  line-height: 1.25;
+}
+#internships .journey-date span {
+  font-family: "Times New Roman", Times, serif;
+  font-size: clamp(10px, 1.95vw, 16px);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: .015em;
+  line-height: 1.15;
+  margin-top: auto;
+}
+#internships .journey-date::before { bottom: 8px; height: 2px; left: calc(-1 * var(--stop-gap)); }
+#internships .journey-stop:first-child .journey-date::before { left: 5px; }
+#internships .journey-date::after {
+  left: 1px;
+  bottom: 4px;
+  width: 10px;
+  height: 10px;
+  border-width: 2px;
+  box-shadow: 0 0 0 3px var(--sheet);
+}
+#internships .journey-card .journey-card-head {
+  min-height: 0;
+  height: clamp(34px, 7vh, 58px);
+  padding: 4px clamp(4px, 1vw, 14px);
+}
+#internships .journey-company { gap: clamp(3px, 1vw, 10px); }
+#internships .journey-company h4 { font-size: clamp(11px, 2.55vw, 25px); letter-spacing: -.03em; }
+#internships .company-logo {
+  zoom: clamp(.48, calc(100vw / 900px), .9);
+}
+#internships .company-logo--gf img {
+  position: static;
+  width: 100%;
+  height: 100%;
+}
+#internships .journey-image {
+  max-height: max(76px, calc(100dvh - 485px));
+  object-fit: contain;
+}
+#internships .journey-outcome {
+  min-height: 67px;
+  padding: 5px clamp(4px, 1vw, 14px);
+}
+#internships .journey-outcome strong { display: block; font-size: clamp(14px, 2.6vw, 24px); line-height: 1.05; }
+#internships .journey-outcome strong span { display: block; font-size: clamp(9px, 1.4vw, 12px); margin: 3px 0 0; }
+#internships .journey-outcome p { font-size: clamp(8px, 1.2vw, 11px); line-height: 1.25; }
+#internships .journey-open { font-size: clamp(12px, 2vw, 20px); }
+#internships .journey-learning {
+  flex-wrap: nowrap;
+  gap: clamp(2px, .7vw, 9px);
+  padding: 5px;
+  margin: 8px 0 0;
+}
+#internships .journey-learning span {
+  flex: 1 1 0;
+  min-width: 0;
+  padding: 3px 4px;
+  font-size: clamp(9px, 1.65vw, 12px);
+  text-align: center;
+  white-space: normal;
+}
+#internships .journey-learning span:last-child { flex-grow: 1.5; }
+@media (max-height: 620px) {
+  #internships .journey-learning { display: none; }
+}
+@media (max-width: 460px) {
+  #internships .journey-date { height: 66px; }
+  #internships .journey-outcome { min-height: 73px; }
+}
