@@ -69,3 +69,33 @@ body[data-view="home"] .contact-trigger-en { display: inline; }
 .contact-row dt { color: #795465; font-size: 13px; }
 .contact-row dd { margin: 0; font-weight: 700; overflow-wrap: anywhere; }
 .contact-row a:hover { text-decoration: underline; }
+
+.contact-letter { margin-top: 16px; border-top: 1px solid #e4bccc; padding-top: 12px; }
+.contact-letter summary { cursor: pointer; font-weight: 700; }
+.contact-letter-form { display: grid; gap: 12px; margin-top: 12px; }
+.contact-letter-form label[hidden] { display: none; }
+.contact-letter-form label { display: grid; gap: 4px; font-size: 14px; }
+.contact-letter-form input,
+.contact-letter-form textarea {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  border: 1px solid #b78396;
+  border-radius: 10px;
+  padding: 8px 10px;
+  background: #fffdf8;
+  color: inherit;
+  font: inherit;
+}
+.contact-letter-form textarea { resize: vertical; }
+.contact-letter-form button {
+  justify-self: start;
+  border: 0;
+  border-radius: 22px;
+  padding: 8px 16px;
+  background: #753b55;
+  color: white;
+}
+.contact-letter-form button:disabled { opacity: .65; }
+.contact-letter-status { margin: 0; font-size: 14px; }
+.contact-letter-status:empty { display: none; }
