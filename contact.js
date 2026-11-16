@@ -45,6 +45,7 @@
         <p role="status" class="contact-letter-status"></p>
       </form>
     </details>
+    <a class="contact-resume-download" href="assets/resume.pdf?v=20261116" download="王艺潞-简历.pdf">下载简历 <span aria-hidden="true">↓</span></a>
   `;
 
   document.body.append(trigger, dialog);

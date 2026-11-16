@@ -99,3 +99,17 @@ body[data-view="home"] .contact-trigger-en { display: inline; }
 .contact-letter-form button:disabled { opacity: .65; }
 .contact-letter-status { margin: 0; font-size: 14px; }
 .contact-letter-status:empty { display: none; }
+
+.contact-resume-download {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 14px;
+  padding: 10px 14px;
+  border: 1px solid #b78396;
+  border-radius: 12px;
+  background: #fffdf8;
+  color: #4b2937;
+  font-weight: 700;
+}
+.contact-resume-download:hover { background: #ffe0eb; }
