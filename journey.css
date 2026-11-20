@@ -110,7 +110,6 @@
   line-height: 1.25;
 }
 #internships .journey-date span {
-  font-family: "Times New Roman", Times, serif;
   font-size: clamp(10px, 1.95vw, 16px);
   font-variant-numeric: tabular-nums;
   letter-spacing: .015em;
