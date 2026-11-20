@@ -1,45 +1,172 @@
-const productStages=[
- {file:'01-wish.png',label:'表达愿望',alt:'今天去哪的愿望输入与心情选择界面',title:'先理解今天的状态',description:'心情、同行人、时间与预算，共同组成一次出行的起点'},
- {file:'02-options.png',label:'比较方案',alt:'今天去哪的主推荐和探索、购物等备选方案界面',title:'同一句愿望，也可以有不同走法',description:'松弛、探索、购物等体验节奏并列呈现，让用户保留选择权'},
- {file:'03-itinerary.png',label:'查看行程',alt:'今天去哪的时间线、店铺和推荐理由界面',title:'每一站，都有安排它的理由',description:'停留时间、预计花费、楼层与推荐理由一起呈现，帮助开始执行'},
- {file:'04-adjustment.png',label:'途中调整',alt:'预算降低后移除咖啡店并保留其他站点的演示界面',title:'计划变了，继续安排',description:'答辩演示：预算降到 50，调整后人均预计消费从 ¥103 变为 ¥25'},
- {file:'05-community.png',section:'community',label:'商圈互动',alt:'商圈社区的路线分享、店铺体验和商圈问答界面',title:'把逛过的路线分享给别人',description:'浏览路线分享、店铺体验和商圈问答，把其他用户的经验带进自己的行程'},
- {file:'06-points.png',section:'profile',label:'个人积分',alt:'个人积分、等级进度、我的足迹和积分任务界面',title:'用积分记录逛过的地方',description:'查看原型中的个人积分、等级进度和出行足迹'}
-];
-const productTabs=[...document.querySelectorAll('[data-product-stage]')];
-let productStageIndex=0;
-function selectProductStage(index,{focus=false}={}){
- productStageIndex=index;const stage=productStages[index];
- productTabs.forEach((tab,i)=>{tab.setAttribute('aria-selected',String(i===index));tab.tabIndex=i===index?0:-1;});
- const img=document.querySelector('#product-screen');img.src=`assets/today-project/${stage.file}`;img.alt=stage.alt;
- document.querySelector('#product-stage-panel').setAttribute('aria-labelledby',`product-tab-${index}`);
- document.querySelector('.product-stage-index').textContent=String(index+1).padStart(2,'0');
- document.querySelector('#product-stage-title').textContent=stage.title;
- document.querySelector('#product-stage-description').textContent=stage.description;
- const device=document.querySelector('[data-open-product-image]');
- const section=stage.section || 'home';
- device.dataset.screen=index;
- device.querySelector('.product-phone-community').hidden=section!=='community';
- device.querySelectorAll('[data-phone-section]').forEach(item=>{
-  item.classList.toggle('is-active', item.dataset.phoneSection===section);
- });
- const sectionLabel=device.querySelector('.product-phone-nav .is-active').textContent.trim();
- device.setAttribute('aria-label',`放大查看${sectionLabel}的${stage.label}界面`);
- if(focus)productTabs[index].focus();
-}
-productTabs.forEach((tab,index)=>{
- tab.addEventListener('click',()=>selectProductStage(index));
- tab.addEventListener('keydown',event=>{
-  let next;
-  if(event.key==='ArrowRight')next=(index+1)%productTabs.length;
-  if(event.key==='ArrowLeft')next=(index+productTabs.length-1)%productTabs.length;
-  if(event.key==='Home')next=0;if(event.key==='End')next=productTabs.length-1;
-  if(next!==undefined){event.preventDefault();selectProductStage(next,{focus:true});}
- });
-});
-document.querySelector('[data-open-product-image]')?.addEventListener('click',()=>{
- const stage=productStages[productStageIndex],img=document.querySelector('#product-image-full');
- img.src=`assets/today-project/${stage.file}`;img.alt=stage.alt;
- document.querySelector('#product-image-title').textContent=`${stage.label} · 答辩演示界面`;
- document.querySelector('#product-image-dialog').showModal();
-});
+// Product showcase interactions stay local to the work view.
+(() => {
+  const assets = 'assets/today-project/';
+  // Trim the old title bars and the captured device status bar.
+  const screens = [
+    { file: '01-wish.png', width: 860, height: 1720, trim: 139 },
+    { file: '02-options.png', width: 860, height: 1720, trim: 110 },
+    { file: '03-itinerary.png', width: 860, height: 1720, trim: 110 },
+    { file: '04-adjustment.png', width: 860, height: 1720, trim: 110 },
+    { file: '05-community.png', width: 940, height: 1382, trim: 0, bodyHeight: 1245 },
+    { file: '06-points.png', width: 1200, height: 2664, trim: 120 }
+  ];
+  const showcase = document.querySelector('#work .showcase');
+  const swipeArea = showcase.querySelector('.swipe-area');
+  const front = showcase.querySelector('.front');
+  const screen = front.querySelector('img');
+  const rear = showcase.querySelector('.back');
+  const preview = rear.querySelector('img');
+  const buttons = [...showcase.querySelectorAll('.controls button')];
+  const detailTrigger = front.querySelector('.detail-trigger');
+  const detail = document.querySelector('.work-detail');
+  const detailImage = detail.querySelector('img');
+  const status = document.querySelector('#screen-status');
+  const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+  const wrap = index => (index + screens.length) % screens.length;
+
+  let active = 0;
+  let gesture = null;
+  let ignorePointerClick = false;
+  let lastHorizontalWheel = -Infinity;
+  let lastWheelDelta = 0;
+  let wheelPeak = 0;
+
+  for (const { file } of screens) {
+    const image = new Image();
+    image.src = assets + file;
+  }
+
+  function setCapture(device, image, index) {
+    if (device.dataset.screen === String(index)) return;
+    const { file, width, height, trim, bodyHeight = height - trim } = screens[index];
+    device.style.setProperty('--source-width', width);
+    device.style.setProperty('--source-height', height);
+    device.style.setProperty('--trim', trim);
+    device.style.setProperty('--body-height', bodyHeight);
+    device.dataset.screen = index;
+    image.src = assets + file;
+  }
+
+  function show(index) {
+    active = wrap(index);
+    const label = buttons[active].textContent.trim();
+    setCapture(front, screen, active);
+    screen.alt = label + '界面';
+    detailTrigger.setAttribute('aria-label', '放大' + screen.alt);
+    setCapture(rear, preview, wrap(active + 1));
+    buttons.forEach((button, position) => {
+      button.setAttribute('aria-pressed', String(position === active));
+    });
+    status.textContent = (active + 1) + ' / ' + screens.length + '，' + label;
+  }
+
+  function setOffset(offset) {
+    swipeArea.style.setProperty('--travel', offset + 'px');
+    swipeArea.style.setProperty('--tilt', offset / 18 + 'deg');
+  }
+
+  function switchScreen(index, direction) {
+    if (wrap(index) === active) {
+      setOffset(0);
+      return;
+    }
+
+    front.getAnimations().filter(animation => animation.id === 'screen-enter').forEach(animation => animation.cancel());
+    show(index);
+    setOffset(0);
+
+    if (!reducedMotion.matches) {
+      const shift = direction * 20;
+      const animation = front.animate(
+        [{ transform: 'translateX(calc(-50% + ' + shift + 'px))', opacity: .74 },
+         { transform: 'translateX(-50%)', opacity: 1 }],
+        { duration: 220, easing: 'cubic-bezier(.2, .7, .24, 1)' }
+      );
+      animation.id = 'screen-enter';
+    }
+  }
+
+  swipeArea.addEventListener('pointerdown', event => {
+    if (gesture || !event.isPrimary || event.button !== 0) return;
+    front.getAnimations().filter(animation => animation.id === 'screen-enter').forEach(animation => animation.cancel());
+    gesture = { id: event.pointerId, x: event.clientX, y: event.clientY, horizontal: false };
+    ignorePointerClick = false;
+    event.target.setPointerCapture(event.pointerId);
+  });
+
+  swipeArea.addEventListener('pointermove', event => {
+    if (gesture?.id !== event.pointerId) return;
+    const dx = event.clientX - gesture.x;
+    const dy = event.clientY - gesture.y;
+    if (!gesture.horizontal && Math.abs(dx) <= Math.abs(dy)) return;
+
+    gesture.horizontal = true;
+    swipeArea.classList.add('is-dragging');
+    if (!reducedMotion.matches) setOffset(Math.max(-82, Math.min(82, dx * .6)));
+    setCapture(rear, preview, wrap(active + (dx < 0 ? 1 : -1)));
+  });
+
+  function endGesture(event, cancelled = false) {
+    if (gesture?.id !== event.pointerId) return;
+    const distance = event.clientX - gesture.x;
+    const verticalDistance = event.clientY - gesture.y;
+    const horizontal = gesture.horizontal || Math.abs(distance) > Math.abs(verticalDistance);
+    const changed = !cancelled && horizontal && distance !== 0;
+    ignorePointerClick = cancelled || horizontal;
+    gesture = null;
+    swipeArea.classList.remove('is-dragging');
+
+    if (changed) {
+      const direction = distance < 0 ? 1 : -1;
+      switchScreen(active + direction, direction);
+    } else {
+      setOffset(0);
+      setCapture(rear, preview, wrap(active + 1));
+    }
+  }
+
+  swipeArea.addEventListener('pointerup', event => endGesture(event));
+  swipeArea.addEventListener('pointercancel', event => endGesture(event, true));
+  swipeArea.addEventListener('lostpointercapture', event => endGesture(event, true));
+  showcase.addEventListener('wheel', event => {
+    const { deltaMode, deltaX, deltaY, timeStamp } = event;
+    if (gesture || event.ctrlKey || Math.abs(deltaX) <= Math.abs(deltaY)) return;
+    event.preventDefault();
+
+    const scale = deltaMode === 1 ? 16 : deltaMode === 2 ? swipeArea.clientWidth : 1;
+    const delta = deltaX * scale;
+    const magnitude = Math.abs(delta);
+    const previousMagnitude = Math.abs(lastWheelDelta);
+    const reversed = Math.sign(delta) !== Math.sign(lastWheelDelta);
+    const acceleratedAfterDecay = previousMagnitude <= wheelPeak / 2 && magnitude > previousMagnitude * 1.65;
+
+    // Switch on the first horizontal event, then group the momentum that follows it.
+    if (timeStamp - lastHorizontalWheel > 180 || reversed || acceleratedAfterDecay) {
+      wheelPeak = magnitude;
+      const direction = delta > 0 ? 1 : -1;
+      switchScreen(active + direction, direction);
+    } else {
+      wheelPeak = Math.max(wheelPeak, magnitude);
+    }
+    lastHorizontalWheel = timeStamp;
+    lastWheelDelta = delta;
+  }, { passive: false });
+  detailTrigger.addEventListener('click', event => {
+    if (event.detail && ignorePointerClick) return;
+    setCapture(detail, detailImage, active);
+    detailImage.alt = screen.alt;
+    detail.showModal();
+    detail.scrollTop = 0;
+  });
+  buttons.forEach((button, index) => {
+    button.addEventListener('click', () => switchScreen(index, index >= active ? 1 : -1));
+  });
+  showcase.addEventListener('keydown', event => {
+    const direction = { ArrowLeft: -1, ArrowRight: 1 }[event.key];
+    if (!direction) return;
+    event.preventDefault();
+    switchScreen(active + direction, direction);
+    if (buttons.includes(event.target)) buttons[active].focus();
+  });
+  show(0);
+})();

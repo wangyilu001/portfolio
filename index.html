@@ -13,16 +13,15 @@
   <link rel="stylesheet" href="illustrations.css">
   <link rel="stylesheet" href="journey.css?v=direct-home">
   <link rel="stylesheet" href="pages.css?v=campus-photos">
-  <link rel="stylesheet" href="work.css?v=clean-points">
+  <link rel="stylesheet" href="work.css?v=swipe-gallery">
   <link rel="stylesheet" href="island.css?v=20261105-intro">
   <script src="app.js?v=island-wink-hover" defer></script>
   <script src="pages.js?v=gf-internship" defer></script>
-  <script src="work.js?v=manual-tabs" defer></script>
+  <script src="work.js?v=swipe-gallery" defer></script>
 <link rel="stylesheet" href="pink-theme.css?v=product-screen-focus">
   <link rel="stylesheet" href="contact.css?v=resume-download">
   <link rel="stylesheet" href="responsive.css?v=product-screen-first">
   <script src="contact.js?v=resume-download" defer></script>
-  <link rel="stylesheet" href="work-focus.css?v=3">
 </head>
 <body class="portfolio-pages" data-view="home">
   <a class="island-back" href="#home" aria-label="Back：返回首页">← Back</a><a class="skip-link" href="#main">跳到主要内容</a>
@@ -282,43 +281,67 @@
     </section>
 
     <section class="thinking" id="work" data-view="work" hidden data-section aria-labelledby="thinking-title">
- <div class="shell work-gallery">
-  <header class="work-gallery-heading"><h2 id="thinking-title">我的作品 <span lang="en">Selected Work</span></h2><span class="work-finalist">金鹰商圈 AI 大赛 · 决赛项目</span></header>
-  <article class="project-feature" id="project-today" aria-labelledby="today-project-title">
-   <div class="project-editorial"><p class="project-category">AI 商圈行程规划</p><h3 id="today-project-title">今天去哪<span>？</span></h3><p class="project-lead">告诉它今天想怎么过，它会排出一条还能随时调整的商场路线</p>
-    <div class="project-journey"><span>表达愿望</span><i aria-hidden="true">→</i><span>比较方案</span><i aria-hidden="true">→</i><span>途中调整</span></div>
-    <p class="project-context">以中山完美金鹰广场和石岐万象汇为场景，按时间、预算和心情推荐去处，并解释为什么这么安排</p>
-    <dl class="project-evidence"><div><dt>167<span>条</span></dt><dd>商户与体验点资料</dd></div><div><dt>128<span>条</span></dt><dd>默认推荐供给</dd></div></dl>
-    <div class="project-contribution" aria-label="我的贡献"><span>需求洞察</span><span>交互设计</span><span>AI＋规则规划</span><span>原型实现</span></div>
-    <div class="project-links"><a href="https://pond-qbyi.upma.site/" target="_blank" rel="noopener noreferrer">体验交互原型 <span aria-hidden="true">↗</span></a></div>
-   </div>
-   <div class="product-showcase">
-    <div class="product-tabs" role="tablist" aria-label="产品功能演示"><button id="product-tab-0" type="button" role="tab" aria-selected="true" aria-controls="product-stage-panel" data-product-stage="0">表达愿望</button><button id="product-tab-1" type="button" role="tab" aria-selected="false" aria-controls="product-stage-panel" tabindex="-1" data-product-stage="1">比较方案</button><button id="product-tab-2" type="button" role="tab" aria-selected="false" aria-controls="product-stage-panel" tabindex="-1" data-product-stage="2">查看行程</button><button id="product-tab-3" type="button" role="tab" aria-selected="false" aria-controls="product-stage-panel" tabindex="-1" data-product-stage="3">途中调整</button><button id="product-tab-4" type="button" role="tab" aria-selected="false" aria-controls="product-stage-panel" tabindex="-1" data-product-stage="4">商圈互动</button><button id="product-tab-5" type="button" role="tab" aria-selected="false" aria-controls="product-stage-panel" tabindex="-1" data-product-stage="5">个人积分</button></div>
-    <div class="product-stage" id="product-stage-panel" role="tabpanel" aria-labelledby="product-tab-0">
-     <span class="product-stage-index" aria-hidden="true">01</span><img class="product-mall-art" src="assets/today-project/mall-scene.png" alt="" aria-hidden="true"><img class="product-mascot-art" src="assets/today-project/explorer.png" alt="" aria-hidden="true">
-     <button class="product-device" type="button" data-open-product-image data-screen="0" aria-label="放大查看首页的表达愿望界面">
-       <span class="product-phone-header" aria-hidden="true"><span class="product-phone-brand">今</span>今天去哪 <span class="product-phone-star">✦</span></span>
-       <span class="product-phone-body">
-         <img id="product-screen" src="assets/today-project/01-wish.png" alt="今天去哪的愿望输入与心情选择界面" width="860" height="1720" decoding="async">
-         <span class="product-phone-community" aria-hidden="true" hidden>
-           <strong>更多商圈灵感</strong>
-           <span>店铺体验 <span>拍照打卡</span> 商圈问答</span>
-         </span>
-       </span>
-       <span class="product-phone-nav" aria-hidden="true">
-         <span data-phone-section="home" class="is-active"><svg viewBox="0 0 16 16"><path d="m2 7 6-5 6 5v7h-4v-4H6v4H2z"/></svg>首页</span>
-         <span data-phone-section="events"><svg viewBox="0 0 16 16"><path d="M2 4h12v3a1 1 0 0 0 0 2v3H2V9a1 1 0 0 0 0-2zm6 0v8"/></svg>活动</span>
-         <span data-phone-section="community"><svg viewBox="0 0 16 16"><path d="M2 3h12v8H7l-4 3v-3H2zm3 3h6m-6 2h4"/></svg>社区</span>
-         <span data-phone-section="profile"><svg viewBox="0 0 16 16"><circle cx="8" cy="5" r="2.5"/><path d="M2.5 14a5.5 4.5 0 0 1 11 0z"/></svg>我的</span>
-       </span>
-     </button>
-     <span class="product-stage-tag">答辩演示 · 产品界面</span>
-    </div>
-    <div class="product-stage-caption" aria-live="polite"><strong id="product-stage-title">先理解今天的状态</strong><p id="product-stage-description">心情、同行人、时间与预算，共同组成一次出行的起点</p></div>
-   </div>
-  </article>
- </div>
-</section>
+      <header class="page-title work-page-heading">
+        <h2 id="thinking-title">我的作品 <span lang="en">Selected Work</span></h2>
+        <span class="work-finalist">金鹰商圈 AI 大赛决赛项目</span>
+      </header>
+      <article class="work-project" id="project-today" aria-labelledby="today-project-title">
+        <div class="dream" aria-hidden="true">
+          <img class="architecture" src="assets/today-project/mall-scene.png" alt="">
+          <img class="eagle" src="assets/today-project/explorer.png" alt="">
+        </div>
+        <div class="composition">
+          <div class="copy">
+            <h3 id="today-project-title">今天去哪？</h3>
+            <p class="category">AI 商圈行程规划</p>
+            <p class="lead">告诉它今天想怎么过，它会排出一条还能随时调整的商场路线</p>
+            <ol class="journey" aria-label="产品流程">
+              <li><span class="step">表达愿望</span><span class="arrow" aria-hidden="true">→</span></li>
+              <li><span class="step">比较方案</span><span class="arrow" aria-hidden="true">→</span></li>
+              <li><span class="step">途中调整</span></li>
+            </ol>
+            <p class="context">以中山完美金鹰广场和石岐万象汇为场景，按时间、预算和心情推荐去处，并解释为什么这么安排</p>
+            <a class="cta" href="https://pond-qbyi.upma.site/" target="_blank" rel="noopener noreferrer">体验交互原型 <span aria-hidden="true">↗</span></a>
+          </div>
+          <section class="showcase" aria-label="产品演示" aria-roledescription="轮播">
+            <div class="swipe-area" tabindex="0" role="group" aria-label="产品画面，可横向滑动、用触控板双指横滑或按左右方向键切换">
+              <figure class="device back" data-screen="1" aria-hidden="true"
+                style="--source-width: 860; --source-height: 1720; --trim: 110; --body-height: 1610;">
+                <div class="device-header" aria-hidden="true"><span class="brand">今</span>今天去哪</div>
+                <div class="device-body">
+                  <div class="capture"><img src="assets/today-project/02-options.png" alt="" draggable="false"></div>
+                  <div class="community-nav" aria-hidden="true"></div>
+                </div>
+              </figure>
+              <figure class="device front" data-screen="0"
+                style="--source-width: 860; --source-height: 1720; --trim: 139; --body-height: 1581;">
+                <div class="device-header" aria-hidden="true"><span class="brand">今</span>今天去哪</div>
+                <div class="device-body">
+                  <div class="capture"><img src="assets/today-project/01-wish.png" alt="表达愿望界面" draggable="false"></div>
+                  <div class="community-nav" aria-hidden="true"></div>
+                </div>
+                <button type="button" class="detail-trigger" aria-label="放大表达愿望界面" aria-haspopup="dialog">
+                  <span aria-hidden="true">
+                    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
+                      <path d="M3 7V3h4m6 0h4v4m0 6v4h-4m-6 0H3v-4"/>
+                    </svg>
+                  </span>
+                </button>
+              </figure>
+            </div>
+            <div class="controls" role="group" aria-label="选择产品画面">
+              <button type="button" aria-pressed="true"><span>表达愿望</span></button>
+              <button type="button" aria-pressed="false"><span>比较方案</span></button>
+              <button type="button" aria-pressed="false"><span>查看行程</span></button>
+              <button type="button" aria-pressed="false"><span>途中调整</span></button>
+              <button type="button" aria-pressed="false"><span>商圈互动</span></button>
+              <button type="button" aria-pressed="false"><span>个人积分</span></button>
+            </div>
+            <p class="sr-only" id="screen-status" aria-live="polite" aria-atomic="true">1 / 6，表达愿望</p>
+          </section>
+        </div>
+      </article>
+    </section>
 
     <section class="outside shell" id="about" data-view="about" hidden data-section aria-labelledby="outside-title">
       <div class="outside-heading"><h2 id="outside-title">关于我 <span lang="en">Beyond Work</span></h2><p>赛艇、攀岩、骑行，也玩飞盘。</p></div>
@@ -335,6 +358,14 @@
 
 
   <dialog id="interest-dialog" class="interest-dialog" aria-labelledby="interest-title"><button class="close-dialog" type="button" data-close="interest-dialog" aria-label="关闭兴趣介绍">×</button><span class="dialog-flower" aria-hidden="true">✳</span><h2 id="interest-title"></h2><p id="interest-description"></p></dialog>
-<dialog class="product-image-dialog" id="product-image-dialog" aria-labelledby="product-image-title"><header><h2 id="product-image-title">表达愿望 · 答辩演示界面</h2><button type="button" class="close-dialog" data-close="product-image-dialog" aria-label="关闭界面大图">×</button></header><img id="product-image-full" src="assets/today-project/01-wish.png" alt="今天去哪的愿望输入与心情选择界面"></dialog>
+<dialog class="detail work-detail" aria-labelledby="detail-title">
+  <header class="device-header">
+    <span class="brand" aria-hidden="true">今</span>
+    <h2 id="detail-title">今天去哪</h2>
+    <form method="dialog"><button aria-label="关闭详情" type="submit" autofocus>×</button></form>
+  </header>
+  <div class="capture"><img alt=""></div>
+  <div class="community-nav" aria-hidden="true"></div>
+</dialog>
 </body>
 </html>
