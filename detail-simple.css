@@ -36,7 +36,7 @@ body.experience-detail-page {
   filter: brightness(1.065);
 }
 .detail-resume { min-width: 0; overflow-wrap: anywhere; }
-.detail-resume h1 {
+.detail-resume h2 {
   margin: 0 0 10px;
   font-size: clamp(27px, 3.2vw, 45px);
   line-height: 1.2;
@@ -65,7 +65,64 @@ body.experience-detail-page {
   }
   .detail-resume { display: contents; }
   .detail-heading { min-width: 0; overflow-wrap: anywhere; }
-  .detail-resume h1 { margin-bottom: 6px; font-size: clamp(21px, 6.4vw, 27px); }
+  .detail-resume h2 { margin-bottom: 6px; font-size: clamp(21px, 6.4vw, 27px); }
   .detail-role { font-size: 13px; }
   .detail-resume ul { grid-column: 1 / -1; margin-top: 0; }
+}
+
+/* Keep the site controls visible while the connected cards scroll below them. */
+body.experience-deck-page {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  height: 100dvh;
+  min-height: 0;
+  overflow: hidden;
+  padding: 72px 0 0;
+}
+.experience-picker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(3px, 1vw, 15px);
+  padding: 0 10px 5px;
+}
+.experience-picker a {
+  display: grid;
+  place-items: center;
+  min-height: 44px;
+  padding-inline: clamp(6px, 1.5vw, 20px);
+  border-radius: 30px;
+  color: #ffe3ed;
+  white-space: nowrap;
+  font-size: clamp(12px, 1.2vw, 15px);
+  outline-offset: -3px;
+}
+.experience-picker a:hover { background: #ffffff22; }
+.experience-picker a[aria-current] {
+  background: #fff6e8;
+  color: #4b2937;
+  font-weight: 700;
+}
+.experience-deck {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(22px, 5vh, 50px);
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+  scroll-snap-type: y proximity;
+  padding: var(--deck-start, 20px) clamp(15px, 3vw, 48px) var(--deck-end, 20px);
+}
+.experience-deck:focus-visible { outline: 2px solid #f3b2c9; outline-offset: -3px; }
+.experience-deck .detail-simple {
+  flex: none;
+  max-width: 1220px;
+  scroll-snap-align: center;
+  padding: clamp(21px, 3.4vw, 48px);
+}
+.experience-deck .detail-simple:focus { outline: none; }
+.experience-deck .detail-simple img { max-height: min(58svh, 570px); }
+@media (max-width: 520px) {
+  .experience-deck .detail-simple { padding: 17px; }
 }
