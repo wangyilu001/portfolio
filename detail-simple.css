@@ -80,28 +80,62 @@ body.experience-deck-page {
   padding: 72px 0 0;
 }
 .experience-picker {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: clamp(3px, 1vw, 15px);
-  padding: 0 10px 5px;
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  width: min(780px, calc(100% - 24px));
+  margin-inline: auto;
+  padding-bottom: 8px;
+}
+.experience-picker::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset-inline: 12.5%;
+  top: 33px;
+  border-top: 1px solid #e9a8c48c;
 }
 .experience-picker a {
   display: grid;
-  place-items: center;
-  min-height: 44px;
-  padding-inline: clamp(6px, 1.5vw, 20px);
-  border-radius: 30px;
+  grid-template-rows: 22px 14px auto;
+  justify-items: center;
+  align-items: center;
+  gap: 4px;
+  min-height: 58px;
+  padding-block: 0 3px;
+  border-radius: 12px;
   color: #ffe3ed;
   white-space: nowrap;
-  font-size: clamp(12px, 1.2vw, 15px);
   outline-offset: -3px;
 }
-.experience-picker a:hover { background: #ffffff22; }
-.experience-picker a[aria-current] {
-  background: #fff6e8;
-  color: #4b2937;
-  font-weight: 700;
+.timeline-company {
+  padding: 3px 8px;
+  border-radius: 20px;
+  font-size: clamp(12px, 1.2vw, 15px);
+  line-height: 1.2;
+}
+.timeline-point {
+  width: 10px;
+  height: 10px;
+  border: 2px solid #e9a8c4;
+  border-radius: 50%;
+  background: #60213e;
+}
+.timeline-period {
+  display: flex;
+  gap: .35em;
+  color: #f5cadc;
+  font-size: clamp(10px, 1.1vw, 13px);
+  font-variant-numeric: tabular-nums;
+}
+.experience-picker a:hover .timeline-company { background: #ffffff22; }
+.experience-picker a[aria-current] .timeline-company { background: #fff6e8; color: #4b2937; font-weight: 700; }
+.experience-picker a[aria-current] .timeline-point { background: #fff6e8; border-color: #fff6e8; }
+.experience-picker a[aria-current] .timeline-period { color: #fff6e8; }
+@media (max-width: 520px) {
+  .timeline-period { display: grid; gap: 0; line-height: 1.2; text-align: center; }
+  .timeline-separator { font-size: 0; }
 }
 .experience-deck {
   display: flex;
